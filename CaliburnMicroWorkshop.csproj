@@ -72,6 +72,7 @@
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\BusyIndicatorViewModel.cs" />
     <Compile Include="ViewModels\ChildScreenViewModel.cs" />
+    <Compile Include="ViewModels\Enabled.cs" />
     <Compile Include="ViewModels\IBusyIndicator.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ApplicationView.xaml.cs">
