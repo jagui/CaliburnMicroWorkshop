@@ -1,21 +1,25 @@
 ﻿using System.ComponentModel.Composition;
+using Caliburn.Micro;
 
 namespace CaliburnMicroWorkshop.ViewModels
 {
     [Export]
-    public class ApplicationViewModel
+    public class ApplicationViewModel : Conductor<Screen>.Collection.OneActive
     {
-        private readonly IBusyIndicator _busyIndicator;
+        private readonly ChildScreenViewModel _firstScreen;
+        private readonly ChildScreenViewModel _secondScreen;
+        private readonly ChildScreenViewModel _thirdScreen;
 
         [ImportingConstructor]
-        public ApplicationViewModel(IBusyIndicator busyIndicator)
+        public ApplicationViewModel(ChildScreenViewModel firstScreen, ChildScreenViewModel secondScreen, ChildScreenViewModel thirdScreen)
         {
-            _busyIndicator = busyIndicator;
-        }
-
-        public void Busy()
-        {
-            _busyIndicator.Start();
+            _firstScreen = firstScreen;
+            _firstScreen.DisplayName = "First";
+            _secondScreen = secondScreen;
+            _secondScreen.DisplayName = "Second";
+            _thirdScreen = thirdScreen;
+            _thirdScreen.DisplayName = "Third";
+            Items.AddRange(new[] { _firstScreen, _secondScreen, thirdScreen });
         }
     }
 }
