@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using Caliburn.Micro;
+using CaliburnMicroWorkshop.Coroutines;
 
 namespace CaliburnMicroWorkshop.ViewModels
 {
@@ -13,6 +15,13 @@ namespace CaliburnMicroWorkshop.ViewModels
         public ChildScreenViewModel(IBusyIndicator busyIndicator)
         {
             _busyIndicator = busyIndicator;
+        }
+
+        public IEnumerable<IResult> DoSomethingExpensive()
+        {
+            yield return new BecomeBusy(_busyIndicator);
+            yield return new SomethingExpensive();
+            yield return new BecomeIdle(_busyIndicator);
         }
     }
 }

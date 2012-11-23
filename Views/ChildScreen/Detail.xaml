@@ -8,5 +8,6 @@
     <StackPanel>
         <TextBlock>Detail</TextBlock>
         <TextBlock x:Name="DisplayName"/>
+        <Button x:Name="DoSomethingExpensive">Do Something Expensive</Button>
     </StackPanel>
 </UserControl>

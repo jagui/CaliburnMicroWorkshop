@@ -65,6 +65,10 @@
     </ApplicationDefinition>
     <Compile Include="Behaviours\InteractivityBlurOnDisabled.cs" />
     <Compile Include="Converter\BooleanInverterConverter.cs" />
+    <Compile Include="Coroutines\BecomeBusy.cs" />
+    <Compile Include="Coroutines\BecomeIdle.cs" />
+    <Compile Include="Coroutines\Result.cs" />
+    <Compile Include="Coroutines\SomethingExpensive.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\BusyIndicatorViewModel.cs" />
     <Compile Include="ViewModels\ChildScreenViewModel.cs" />
@@ -75,9 +79,6 @@
     </Compile>
     <Compile Include="Views\BusyIndicatorView.xaml.cs">
       <DependentUpon>BusyIndicatorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ChildScreenView.xaml.cs">
-      <DependentUpon>ChildScreenView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildScreen\Detail.xaml.cs">
       <DependentUpon>Detail.xaml</DependentUpon>
@@ -98,10 +99,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BusyIndicatorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ChildScreenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
