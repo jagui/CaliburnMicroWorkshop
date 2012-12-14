@@ -1,0 +1,14 @@
+<Window x:Class="CaliburnLifeCycle.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
+
+    <Grid Background="White">
+        <TextBlock Text="Go!"
+		           VerticalAlignment="Center"
+		           HorizontalAlignment="Center"
+		           FontSize="20" 
+                   cal:Message.Attach="[Event MouseDown]=[Action Go]"/>
+    </Grid>
+
+</Window>
